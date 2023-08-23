@@ -1,0 +1,230 @@
+:root {
+  --Purple: hsl(259, 100%, 65%);
+  --Light-red: hsl(0, 100%, 67%);
+
+  --White: hsl(0, 0%, 100%);
+  --lable: #707070;
+  --Off-white: hsl(0, 0%, 94%);
+  --Light-grey: hsl(0, 0%, 86%);
+  --Smokey-grey: hsl(0, 1%, 44%);
+  --Off-black: hsl(0, 0%, 8%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--Light-grey);
+  font-family: Poppins;
+}
+
+.containerApp {
+  max-width: 600px;
+  background-color: var(--White);
+  padding: 2rem;
+  margin: 1rem;
+  border-radius: 1.6rem 1.6rem 10rem 1.6rem;
+}
+
+.birthdayContainer {
+  display: flex;
+  gap: 2rem;
+}
+
+.containerDay,
+.containerMonth,
+.containerYear {
+  width: 21%;
+}
+.lableInput {
+  color: var(--lable);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.lableInputError {
+  color: var(--Light-red);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.errorInputBoder {
+  border: 1px solid var(--Light-red) !important;
+}
+
+/* Eliminar estilos predeterminados de algunos navegadores */
+input {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+}
+
+/*remover botones de incrementar y decrementar del imput */
+div input[type="number"]::-webkit-inner-spin-button,
+div input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+div input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+div input {
+  border: 1px solid #e7e7e7;
+  caret-color: var(--Purple);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  margin-top: 0.3rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+input::placeholder {
+  font-weight: 600;
+}
+
+div input:hover {
+  border: 1px solid var(--Purple);
+  caret-color: var(--Purple);
+  cursor: pointer;
+}
+
+.container-Icon-line {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  border-radius: 50%;
+}
+
+.separator {
+  flex: 1;
+  border-top: 1px solid var(--Light-grey);
+}
+
+section img {
+  background-color: var(--Purple);
+  border-radius: 50%;
+  width: 4rem;
+  padding: 1rem;
+}
+
+section img:hover {
+  background-color: var(--Off-black);
+  cursor: pointer;
+}
+
+.resultDays,
+.resultMonth,
+.resultYear {
+  display: flex;
+  font-size: 5rem;
+  font-weight: 800;
+}
+
+.resultNumber {
+  color: var(--Purple);
+  letter-spacing: 0.8rem;
+}
+
+/*cuando conocemos la edad activar esta clase...*/
+.active {
+  color: var(--Purple);
+  letter-spacing: normal;
+  padding-right: 0.5rem;
+}
+
+/*clases que se activan cuando hay errores en el formulario...*/
+
+.redLabel {
+  color: var(--Light-red);
+}
+
+.errorInputBoder {
+  border: 1px solid var(--Light-red);
+}
+
+.errorInputField {
+  color: var(--Light-red);
+  font-family: auto;
+  font-size: x-small;
+  display: block;
+  margin-top: 0.3rem;
+}
+/*--------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 650px) {
+  div input {
+    font-size: 1.5rem;
+  }
+  .resultDays,
+  .resultMonth,
+  .resultYear {
+    font-size: 4rem;
+  }
+
+  .separator {
+    margin: 3rem 0;
+  }
+  section img {
+    position: absolute;
+    left: 40%;
+    top: 1rem;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .birthdayContainer {
+    gap: 1rem;
+  }
+
+  .containerDay,
+  .containerMonth,
+  .containerYear {
+    width: 25%;
+  }
+
+  div input {
+    font-size: 1rem;
+  }
+
+  .resultDays,
+  .resultMonth,
+  .resultYear {
+    font-size: 3rem;
+  }
+
+  .containerApp {
+    border-radius: 1.6rem 1.6rem 6rem 1.6rem;
+}
+}
+
+@media screen and (max-width: 375px) {
+  .resultDays,
+  .resultMonth,
+  .resultYear {
+    font-size: 2.3rem;
+  }
+  .containerDay,
+  .containerMonth,
+  .containerYear {
+    width: 28%;
+  }
+  section img {
+    left: 35%;
+  }
+}
